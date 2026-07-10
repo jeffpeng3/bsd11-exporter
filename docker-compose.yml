@@ -1,0 +1,15 @@
+services:
+  tuya-exporter:
+    build: .
+    container_name: tuya-exporter
+    restart: unless-stopped
+    ports:
+      - "${EXPORTER_PORT:-8000}:8000"
+    environment:
+      TUYA_DEVICE_ID: "${TUYA_DEVICE_ID}"
+      TUYA_ADDRESS: "${TUYA_ADDRESS}"
+      TUYA_LOCAL_KEY: "${TUYA_LOCAL_KEY}"
+      TUYA_VERSION: "${TUYA_VERSION:-3.5}"
+      TUYA_POLL_INTERVAL: "${TUYA_POLL_INTERVAL:-5}"
+      EXPORTER_PORT: "${EXPORTER_PORT:-8000}"
+      DEVICE_NAME: "${DEVICE_NAME:-Smart plug}"
