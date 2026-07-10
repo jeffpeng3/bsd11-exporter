@@ -9,4 +9,4 @@ COPY exporter.py .
 
 EXPOSE 8000
 
-CMD ["python", "exporter.py"]
+CMD ["python3", "-u", "exporter.py"]
