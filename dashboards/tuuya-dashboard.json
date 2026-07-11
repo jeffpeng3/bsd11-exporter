@@ -44,7 +44,8 @@
                       "editorMode": "code",
                       "expr": "tuya_power_watts{device_name=~\"$device\"}",
                       "legendFormat": "{{device_name}}",
-                      "range": true
+                      "range": true,
+                      "interval": "5s"
                     },
                     "version": "v0"
                   },
@@ -166,7 +167,8 @@
                       "editorMode": "code",
                       "expr": "tuya_voltage{device_name=~\"$device\"}",
                       "legendFormat": "{{device_name}}",
-                      "range": true
+                      "range": true,
+                      "interval": "5s"
                     },
                     "version": "v0"
                   },
@@ -289,7 +291,8 @@
                       "editorMode": "code",
                       "expr": "tuya_current_amperes{device_name=~\"$device\"} * 1000",
                       "legendFormat": "{{device_name}}",
-                      "range": true
+                      "range": true,
+                      "interval": "5s"
                     },
                     "version": "v0"
                   },
@@ -457,10 +460,7 @@
               "percentChangeColorMode": "standard",
               "reduceOptions": {
                 "calcs": [
-                  "lastNotNull",
-                  "max",
-                  "min",
-                  "mean"
+                  "lastNotNull"
                 ],
                 "fields": "",
                 "values": false
@@ -541,10 +541,7 @@
               "percentChangeColorMode": "standard",
               "reduceOptions": {
                 "calcs": [
-                  "lastNotNull",
-                  "max",
-                  "min",
-                  "mean"
+                  "lastNotNull"
                 ],
                 "fields": "",
                 "values": false
@@ -625,10 +622,7 @@
               "percentChangeColorMode": "standard",
               "reduceOptions": {
                 "calcs": [
-                  "lastNotNull",
-                  "max",
-                  "min",
-                  "mean"
+                  "lastNotNull"
                 ],
                 "fields": "",
                 "values": false
@@ -765,7 +759,7 @@
     "energy"
   ],
   "timeSettings": {
-    "autoRefresh": "",
+    "autoRefresh": "5s",
     "autoRefreshIntervals": [
       "5s",
       "10s",
@@ -779,7 +773,7 @@
       "1d"
     ],
     "fiscalYearStartMonth": 0,
-    "from": "now-6h",
+    "from": "now-1h",
     "hideTimepicker": false,
     "timezone": "browser",
     "to": "now"
